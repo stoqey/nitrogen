@@ -117,6 +117,7 @@ const Index = () => {
       const formatDate = (d: any): string => {
         return moment(d).format('MM-DD-YYYY')
       }
+
       console.log('SUBSCRIBE:DATE', { start: formatDate(startDate), end: formatDate(endDate) });
       console.log('----------------', { newTotalTrades, profitOG, newProfit, algoMode });
       // console.log('SUBSCRIBE:TRADES', { newTotalTrades, profitOG, newProfit });
