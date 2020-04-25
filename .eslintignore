@@ -1,0 +1,10 @@
+.next/
+build/
+node_modules/
+
+*.css
+*.ico
+*.jpg
+*.png
+*.txt
+*.xml

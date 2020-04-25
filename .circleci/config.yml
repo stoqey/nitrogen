@@ -1,0 +1,55 @@
+version: 2.1
+
+orbs:
+  gcp-gcr: circleci/gcp-gcr@0.6.1
+  k8s: digitalocean/k8s@0.1.1
+
+jobs:
+  
+  build:
+    machine: true
+    steps:
+      - checkout
+
+      - run:
+          name: Install Sentry cli
+          command: curl -sL https://sentry.io/get-cli/ | bash
+
+      - run: 
+          name: Sentry info
+          command: sentry-cli info
+
+      - gcp-gcr/gcr-auth
+
+      # Algo notebook
+      - gcp-gcr/build-image:
+          registry-url: gcr.io
+          image: algo-notebook
+          tag: ${CIRCLE_SHA1:0:7}
+          dockerfile: Dockerfile.notebook
+
+      - gcp-gcr/push-image:
+          registry-url: gcr.io
+          image: algo-notebook
+          tag: ${CIRCLE_SHA1:0:7} 
+
+      - k8s/install
+
+      - k8s/initialize:
+          cluster: cloudx
+
+      - run:
+          name: Update Algo Notebook Deployment
+          command: kubectl set image deployment/algo-notebook algo-notebook=gcr.io/xxcloud/algo-notebook:${CIRCLE_SHA1:0:7}
+
+
+
+workflows:
+  version: 2
+  algo-notebook:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master

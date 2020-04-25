@@ -1,0 +1,46 @@
+{
+  "env": {
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true
+          }
+        ]
+      ]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "preset-env": {
+              "modules": "commonjs"
+            }
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true
+          }
+        ]
+      ]
+    }
+  }
+}

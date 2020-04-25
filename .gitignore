@@ -1,0 +1,20 @@
+# Dependency directories
+node_modules/
+
+.DS_Store
+
+# next.js build output
+.next
+
+# production server output
+dist
+build
+
+# env
+.env
+
+# Ignore all results public images results
+public/*.png
+public/*.jpg
+public/*.json
+public/*.svg
