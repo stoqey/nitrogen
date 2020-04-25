@@ -14,7 +14,20 @@
     "export": "next export && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node dist/server/index.js",
     "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit",
-    "eslint": "eslint . --fix --ext=ts,tsx"
+    "eslint": "eslint . --fix --ext=ts,tsx",
+    "lint:ts": "yarn eslint",
+    "lint:ts:fix": "yarn lint:js -- --fix"
+  },
+  "lint-staged": {
+    "./**/*.{ts,tsx}": [
+      "eslint . --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "keywords": [
     "stocks",
@@ -107,6 +120,8 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-simple-import-sort": "^5.0.2",
     "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
     "mocha": "^7.1.1",
     "next-compose-plugins": "^2.2.0",
     "nodemon": "^1.19.1",
