@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-ts-express",
-  "version": "1.0.0",
-  "description": "",
+  "name": "fintrogen",
+  "version": "0.0.1",
+  "description": "Notebook for quants and developers",
   "main": "index.js",
   "scripts": {
     "dev": "SENTRY_LOG_LEVEL=info nodemon server/index.ts",
@@ -16,12 +16,16 @@
     "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit"
   },
   "keywords": [
-    "nextjs",
-    "server-side-rendering",
-    "expressjs"
+    "stocks",
+    "crypto",
+    "trading",
+    "algo-trading",
+    "next-js",
+    "expressjs",
+    "stoqey"
   ],
   "author": "Stoqey Inc <support@stoqey.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@amplitude/react-amplitude": "^1.0.0",
     "@apollo/react-hooks": "^3.1.4",

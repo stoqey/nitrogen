@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { useEffect, useState } from 'react';
 
 export function useFetch(opt: AxiosRequestConfig): any {
 
@@ -12,6 +12,7 @@ export function useFetch(opt: AxiosRequestConfig): any {
         }
         getData();
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return !dbData ? {} as any : dbData;

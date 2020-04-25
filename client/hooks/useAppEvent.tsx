@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { AppEvents } from '../../shared/AppEvent';
 
 export function useAppEvent(eventName: string): any {
