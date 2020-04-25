@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+
 import { AlgoResultsFragment } from '../algoresults.typedef';
 
 export const ON_ALGO_RESULTS_SUBSCRIPTION = gql`

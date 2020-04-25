@@ -1,14 +1,15 @@
-import React from 'react'
-import { ApolloClient } from 'apollo-client'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { split, from as fromLinks } from 'apollo-link';
+import { ApolloClient } from 'apollo-client'
+import { split } from 'apollo-link';
 import { HttpLink } from 'apollo-link-http';
 import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities'
 import fetch from 'node-fetch';
-import { SERVER_URI, isClient } from '../../shared/config';
+import React from 'react'
+
 import { getWebsocketLink } from '../../client/utils/window';
+import { isClient, SERVER_URI } from '../../shared/config';
 import withAmplitude from './withAmplitude';
 
 

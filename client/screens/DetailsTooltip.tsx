@@ -1,8 +1,8 @@
 
-import React from 'react'
-import { Chart } from 'react-charts'
-import { getProfitColor } from '../utils/colors';
 import moment from 'moment';
+import React from 'react'
+
+import { getProfitColor } from '../utils/colors';
 
 export function DetailsTooltip({ primaryAxis, datum }: any) {
 

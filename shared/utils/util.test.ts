@@ -1,5 +1,7 @@
 import 'mocha';
+
 import { expect } from 'chai';
+
 import { getSplitedTime } from './time.utils';
 
 describe('Given utilities', () => {

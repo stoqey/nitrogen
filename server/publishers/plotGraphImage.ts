@@ -1,14 +1,13 @@
 import plot from '@stoqey/gnuplot';
-import path from 'path';
+import { execSync } from 'child_process';
 import fs from 'fs';
 import concat from 'lodash/concat';
-import { exec, execSync } from 'child_process';
-import { AlgoResults } from '../../shared/graphql/algoresults.typedef';
-import JSONDATA from '../../shared/utils/text.utils';
-import { PubSub } from 'apollo-server-express';
+import path from 'path';
 
-import { swallowPromise } from '../../shared/utils/promise.utils';
 import { theme } from '../../client/theme';
+import { AlgoResults } from '../../shared/graphql/algoresults.typedef';
+import { swallowPromise } from '../../shared/utils/promise.utils';
+import JSONDATA from '../../shared/utils/text.utils';
 /**
  * Get results
  * Check if exists in-memory
@@ -17,7 +16,7 @@ import { theme } from '../../client/theme';
  * Server file from temp
  */
 
-export const plotGraphImageToDisk = async (transId: string, pubsub?: PubSub): Promise<boolean> => {
+export const plotGraphImageToDisk = async (transId: string): Promise<boolean> => {
     const pathFile = `${__dirname}/../../public/${transId}`;
     const filenameJson = path.resolve(`${pathFile}.json`);
 

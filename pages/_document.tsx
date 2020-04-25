@@ -1,7 +1,7 @@
-import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
+import React from 'react';
+import { AMPLITUDE_KEY, SEGMENT_DEV,SEGMENT_PROD } from 'shared/config';
 import { ServerStyleSheet } from 'styled-components';
-import { AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV } from 'shared/config';
 
 export class CustomDocument extends Document {
   render() {

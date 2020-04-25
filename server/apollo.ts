@@ -1,17 +1,14 @@
+import { ApolloServer, makeExecutableSchema, PubSub } from 'apollo-server-express';
 import express from 'express';
-import { ApolloServer, PubSub, makeExecutableSchema } from 'apollo-server-express';
-
 import { execute, subscribe } from 'graphql';
 import { createServer } from 'http';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
 
-
+import { GraphQLPath } from '../shared/config';
 import typeDefs from '../shared/graphql/typedef'
+import { PORT } from './config';
 import { QueryResolver, SubscriptionResolver } from './resolvers';
 import { resolverEvents } from './resolvers/resolver.events';
-import { PORT } from './config';
-import { GraphQLPath } from '../shared/config';
-import { APPEVENTS } from '../shared/AppEvent';
 
 
 /**

@@ -1,11 +1,12 @@
-import express from 'express';
 import bodyParser from 'body-parser';
-import path from 'path';
+import { execSync } from 'child_process';
+import express from 'express';
 import fs from 'fs';
 import next from 'next';
-import { apolloServerSetUp } from './apollo';
-import { execSync } from 'child_process';
+import path from 'path';
+
 import Assets from '../client/assets';
+import { apolloServerSetUp } from './apollo';
 
 export const assets = Assets;
 const dev = process.env.NODE_ENV !== 'production';

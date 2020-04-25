@@ -1,8 +1,13 @@
-import React from 'react'
-import { Chart } from 'react-charts'
-import { DataSeries } from '../../interfaces';
+
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react/display-name */
+
 // import useChartConfig from '../utils/useChartConfig'
 import isEmpty from 'lodash/isEmpty';
+import React from 'react'
+import { Chart } from 'react-charts'
+
+import { DataSeries } from '../../interfaces';
 import { DetailsTooltip } from './DetailsTooltip';
 
 interface Props {
@@ -13,7 +18,7 @@ const GraphLine = (props: Props) => {
 
     const { dataSeries } = props;
 
-    if(isEmpty(dataSeries && dataSeries.datums)){
+    if (isEmpty(dataSeries && dataSeries.datums)) {
         return null;
     }
 
@@ -43,12 +48,12 @@ const GraphLine = (props: Props) => {
 
     const tooltip = React.useMemo(
         () => ({
-          render: ({ datum, primaryAxis, getStyle }: any) => {
-            return <DetailsTooltip {...{ getStyle, primaryAxis, datum }} />
-          }
+            render: ({ datum, primaryAxis, getStyle }: any) => {
+                return <DetailsTooltip {...{ getStyle, primaryAxis, datum }} />
+            }
         }),
         []
-      )
+    )
 
     const axes = React.useMemo(
         () => [

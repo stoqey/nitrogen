@@ -1,4 +1,3 @@
-import { Moment } from "moment";
 
 const calendarLabel = 'Calendar';
 const roleDescription = 'datepicker';

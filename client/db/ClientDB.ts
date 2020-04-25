@@ -1,5 +1,5 @@
+import { AlgoMode } from '../../interfaces/common.types';
 import { LocalStorageUtility } from './localStorage.util';
-import { TradeType, AlgoMode } from '../../interfaces/common.types';
 interface State {
     endDate: Date;
     startDate: Date;

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Flex, Text, Box, Link } from 'rebass'
+import { Box, Flex, Text } from 'rebass'
 
 interface Props {
     loading: boolean;
 }
-export const Nav = ({ loading }: Props) => {
+export const Nav = () => {
     // console.log('loading is ', loading)
     return (
         <Flex

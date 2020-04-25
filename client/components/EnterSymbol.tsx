@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Flex, Button } from 'rebass';
 import {
-    Label,
     Input,
+    Label,
     Select,
-    Textarea,
-    Radio,
-    Checkbox,
 } from '@rebass/forms'
 import { ClientDB } from 'client/db/ClientDB';
-import { AppEvents, APPEVENTS } from '../../shared/AppEvent';
-import { AlgoMode } from '../../interfaces';
-import StartEndDatePicker, { StartEnd } from './react-dates/StartEndPicker'
+import { segmentTrack } from 'client/utils/analytics';
 import moment from 'moment';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import Loader from 'react-loader-spinner';
-import {
-    AmplitudeProvider,
-    Amplitude,
-    LogOnMount
-} from "@amplitude/react-amplitude";
-import { amplitudeInstrument, segmentTrack } from 'client/utils/analytics';
+import { Box, Button, Flex } from 'rebass';
+import styled from 'styled-components';
+
+import { AlgoMode } from '../../interfaces';
+import { APPEVENTS } from '../../shared/AppEvent';
+import StartEndDatePicker, { StartEnd } from './react-dates/StartEndPicker'
 
 const InputWrapper = styled.div`
     border-radius: 2px;

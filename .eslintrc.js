@@ -26,7 +26,10 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
 
-    // waiting for full import support in TypeScript
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/camelcase": "off",
+
     "import/default": "off",
     "import/order": "off",
     "import/no-duplicates": "error",
@@ -36,11 +39,13 @@ module.exports = {
     "import/named": "off",
     "import/namespace": "off",
 
-    "no-unused-expressions": ["error", { allowTaggedTemplates: true }],
-    "no-unused-vars": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error",
-    "simple-import-sort/sort": "error",
+
+
+    // "no-unused-expressions": ["error", { allowTaggedTemplates: true }],
+    // "no-unused-vars": "off",
+    // "react-hooks/rules-of-hooks": "error",
+    // "react-hooks/exhaustive-deps": "error",
+    "simple-import-sort/sort": "off",
     "sort-imports": "off",
   },
   settings: {

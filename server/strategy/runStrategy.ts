@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import backtest, { Backtest } from '@vuga/barebone';
+
 import { AlgoMode } from '../../interfaces/common.types';
 
 // ## Create interfaces here
@@ -56,10 +58,12 @@ export async function runStrategy(args: BackTestParams) {
         },
 
         strategy: {
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             analysePosition: async ({ bar, position, exitPosition }) => {
 
             },
 
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             onMarketTick: async ({ bar, enterPosition }) => {
 
             }

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useApolloClient } from '@apollo/react-hooks';
+import { EnterSymbolData } from 'client/components/EnterSymbol';
+import { Nav } from "client/components/Nav"
 import concat from 'lodash/concat';
 import random from 'lodash/random';
-import { Nav } from "client/components/Nav"
-import { AppEvents } from '../shared/AppEvent';
-import { RunAlgorithmResults } from '../server/strategy/runStrategy';
-import AlgoScreen from '../client/screens/AlgoScreen';
-import { getSplitedTime } from 'shared/utils/time.utils';
-import { useApolloClient } from '@apollo/react-hooks';
-import { ON_ALGO_RESULTS_SUBSCRIPTION } from 'shared/graphql/subscription';
-import { RUN_ALGO } from 'shared/graphql/query/runAlgo.query';
-import { AlgoResults } from 'shared/graphql/algoresults.typedef';
 import moment from 'moment';
-import { EnterSymbolData } from 'client/components/EnterSymbol';
+import React, { useEffect, useState } from 'react';
+import { AlgoResults } from 'shared/graphql/algoresults.typedef';
+import { RUN_ALGO } from 'shared/graphql/query/runAlgo.query';
+import { ON_ALGO_RESULTS_SUBSCRIPTION } from 'shared/graphql/subscription';
+import { getSplitedTime } from 'shared/utils/time.utils';
+
+import AlgoScreen from '../client/screens/AlgoScreen';
+import { RunAlgorithmResults } from '../server/strategy/runStrategy';
 
 
 const randomNumber = () => {
@@ -72,6 +72,7 @@ const Index = () => {
     // Run a transaction
     setEnterSymbol(data);
 
+    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     resetAlgo();
   }
 

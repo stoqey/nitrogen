@@ -1,8 +1,11 @@
-import React from 'react'
-import { Chart } from 'react-charts'
-import { DataSeries } from '../../interfaces';
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react/display-name */
 // import useChartConfig from '../utils/useChartConfig'
 import isEmpty from 'lodash/isEmpty';
+import React from 'react'
+import { Chart } from 'react-charts'
+
+import { DataSeries } from '../../interfaces';
 
 interface Props {
     dataSeries: DataSeries

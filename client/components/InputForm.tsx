@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Heading } from 'rebass';
-import { EnterSymbol } from './EnterSymbol';
+import { Box } from 'rebass';
+
 
 export const InputForm = () => {
     return (

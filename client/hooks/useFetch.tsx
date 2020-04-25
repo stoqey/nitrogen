@@ -12,7 +12,6 @@ export function useFetch(opt: AxiosRequestConfig): any {
         }
         getData();
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return !dbData ? {} as any : dbData;

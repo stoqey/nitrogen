@@ -1,6 +1,3 @@
-import chunk from 'lodash/chunk';
-import sortBy from 'lodash/sortBy'
-
 import moment, { unitOfTime } from 'moment';
 
 export const getTimeDiff = (start: Date, end: Date, as: unitOfTime.Base): number => {
@@ -49,9 +46,9 @@ export const getSplitedTime = (startDate: Date, endDate: Date): GetSplitedTime =
 
     // Organise dates from start to finish
     // dateChunks.filter(((dc) => dc && dc.length !== 0))
-    const organisedDatesWithRanges: SplitedTime[] = dates.map((d, index) => {
+    const organisedDatesWithRanges: SplitedTime[] = dates.map((d) => {
 
-        let currentDay = new Date(d);
+        const currentDay = new Date(d);
 
         // 9 - 5 PM
         // Starting at 9 AM

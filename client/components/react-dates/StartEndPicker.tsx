@@ -1,14 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import moment, { Moment } from 'moment';
 import omit from 'lodash/omit';
+import moment, { Moment } from 'moment';
+import React from 'react';
+import { DateRangePicker, DateRangePickerPhrases, isSameDay } from 'react-dates';
+import { css, withStyles } from 'react-with-styles';
 
-import { withStyles, withStylesPropTypes, css } from 'react-with-styles';
-
-import { DateRangePicker, DateRangePickerPhrases, DateRangePickerShape, isSameDay } from 'react-dates';
-
+import { ANCHOR_LEFT, END_DATE, HORIZONTAL_ORIENTATION, START_DATE } from './constants';
 import defaultPhrases from './defaultPhrases';
-import { START_DATE, END_DATE, HORIZONTAL_ORIENTATION, ANCHOR_LEFT } from './constants';
 
 
 interface Props {
@@ -123,7 +120,7 @@ const initDefaultProps: Props = {
     minimumNights: 0,
     enableOutsideDays: false,
     isDayBlocked: () => false,
-    isOutsideRange: (day: any) => false,
+    isOutsideRange: () => false,
     isDayHighlighted: () => false,
 
     // internationalization

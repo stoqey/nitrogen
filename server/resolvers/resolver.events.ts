@@ -1,11 +1,12 @@
-import { AppEvents, APPEVENTS } from "../../shared/AppEvent";
-import { RunAlgorithm } from "../strategy/runStrategy";
 import { PubSub } from "apollo-server-express";
-import { delay } from "../../shared/utils/promise.utils";
 import chalk from "chalk";
+
+import { APPEVENTS,AppEvents } from "../../shared/AppEvent";
 import { AlgoResults } from "../../shared/graphql/algoresults.typedef";
+import { delay } from "../../shared/utils/promise.utils";
 import { plotGraphImageToDisk, saveTradeDataToDisk } from "../publishers/plotGraphImage";
 import { sendDataToAlgoServer } from "../publishers/sendDataToAlgoServer";
+import { RunAlgorithm } from "../strategy/runStrategy";
 
 export const resolverEvents = (pubsub: PubSub) => {
 

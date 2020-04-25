@@ -1,5 +1,6 @@
-import backtest, { Backtest } from "@vuga/barebone";
+import { Backtest } from "@vuga/barebone";
 import gql from 'graphql-tag';
+
 import { RunAlgorithm } from "../../server/strategy/runStrategy";
 
 export interface AlgoResults {

@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import Graph from './Graph';
-import GraphBar from './GraphBar';
-import GraphLine from './GraphLine';
-import styled from 'styled-components';
-import { Box, Heading, Image } from 'rebass';
-import { RunAlgorithmResults } from '../../server/strategy/runStrategy';
 import isEmpty from 'lodash/isEmpty';
+import React, { useEffect, useState } from 'react';
+import { Box, Image } from 'rebass';
+
+import { RunAlgorithmResults } from '../../server/strategy/runStrategy';
+import { getPercentageGain } from '../../server/utils';
+import { APPEVENTS } from '../../shared/AppEvent';
 import { EnterSymbol, EnterSymbolData } from '../components/EnterSymbol';
 import { segmentTrack } from '../utils/analytics';
-import { APPEVENTS } from '../../shared/AppEvent';
 import { getColorByProfit } from '../utils/colors';
-import { getPercentageGain } from '../../server/utils';
+import Graph from './Graph';
+import GraphBar from './GraphBar';
 
-const Title = styled.span`
-   font-size: 20px;
-   font-weight: bold;
-`;
 
 interface Props {
   data: RunAlgorithmResults;

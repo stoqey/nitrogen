@@ -1,8 +1,10 @@
-import React from "react";
+/* eslint-disable react/display-name */
 import {
     AmplitudeProvider,
 } from "@amplitude/react-amplitude";
-import { isClient, AMPLITUDE_KEY } from "../../shared/config";
+import React from "react";
+
+import { AMPLITUDE_KEY, isClient } from "../../shared/config";
 
 function withAmplitude(Component: any) {
     return () => {

@@ -13,7 +13,8 @@
     "docker-nb:push": "docker push gcr.io/xxcloud/algo-notebook:latest",
     "export": "next export && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node dist/server/index.js",
-    "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit"
+    "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit",
+    "eslint": "eslint . --fix --ext=ts,tsx"
   },
   "keywords": [
     "stocks",

@@ -1,9 +1,10 @@
-import React, { PureComponent } from 'react';
 import * as d3Time from 'd3-time-format'
-import moment from 'moment';
+import React from 'react';
 import {
-    BarChart, Bar, Cell, Legend, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine,
+    Bar, BarChart, CartesianGrid, Cell, Legend, ReferenceLine,
+    ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
+
 import { Datum } from '../../../interfaces';
 
 interface Props {
