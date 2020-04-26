@@ -26,7 +26,6 @@ jobs:
           registry-url: gcr.io
           image: nitrogen
           tag: ${CIRCLE_SHA1:0:7}
-          dockerfile: Dockerfile.notebook
 
       - gcp-gcr/push-image:
           registry-url: gcr.io
