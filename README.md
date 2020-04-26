@@ -8,17 +8,39 @@ There are very few javascript notebooks for creating algorithmic trading strateg
 
 With a simple server-side rendered app, we can run the algo code on the server-side then we send the processed data to the client for visualization and analysis.
 
-### Installation 
+## Features
+
+| Done? |                         |
+| :---: | ----------------------- |
+|   ✅   | Backtesting             |
+|   ✅   | Market data integration |
+|   ✅   | Data visualization      |
+|   ⬜️   | Live trading            |
+|   ⬜️   | Cloud editor            |
 
 
-### Brokers / Market data
+#### Brokers / Market data
 - [x] Interactive brokers
 - [x] Finnhub
 - [x] Binance
 - [ ] `insert your favourite broker` ....
 
+## Installation & usage
 
-#### Challenges
+#### Install
+```bash
+-> git clone fintrogen
+-> cd path/to/fintrogen
+-> yarn  
+```
+
+#### Start
+```bash
+-> yarn dev
+```
+
+
+## Challenges
 - [x] Plotting a lot of data on the client slows down algo execution
   ```
   --> Plot big data on server-side, save results in image then share image with client
@@ -29,16 +51,12 @@ With a simple server-side rendered app, we can run the algo code on the server-s
   ```
 
 
+### Roadmap
 
 
-#### Roadmap
-- Live trading setup
-- Cloud editor
+## CODENAME: Nitrogen 2020
+![Nitrogen](./docs/nitrogen.png)
 
+##### Stoqey INC
 
-##### Inspiration
-- [Data-forge notebook](https://www.data-forge-notebook.com/)
-
-
-### Many thanks
   
