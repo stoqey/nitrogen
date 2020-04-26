@@ -2,7 +2,9 @@
 <p align="center">Notebook for building algo trading strategies.</p>
 
 
-<img style="display: flex;margin: auto;" src="./docs/dollarbill.gif"></img> 
+<p align="center">
+<img src="./docs/dollarbill.gif"></img> 
+</p>
 
 
 
@@ -14,7 +16,10 @@ With a simple server-side rendered app, we can run the algo code on the server-s
 
 <h2 align="center">Features</h2>
 
-![Features of nitrogen](docs/nitrogen-form.png)
+<p align="center">
+<img src="./docs/nitrogen-form.png"></img> 
+</p>
+
 <div align="center">Nitrogen molecules</div>
 
 <br/>
@@ -64,7 +69,10 @@ With a simple server-side rendered app, we can run the algo code on the server-s
 
 
 
-<img style="display: flex;margin: auto;" src="./docs/nitrogen.png"></img> 
+
+<p align="center">
+<img src="./docs/nitrogen.png"></img> 
+</p>
 <p align="center">Stoqey Inc, Nitrogen</p>
 
 
