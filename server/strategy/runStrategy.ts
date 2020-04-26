@@ -58,12 +58,11 @@ export async function runStrategy(args: BackTestParams) {
         },
 
         strategy: {
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
+
             analysePosition: async ({ bar, position, exitPosition }) => {
 
             },
 
-            // eslint-disable-next-line @typescript-eslint/no-empty-function
             onMarketTick: async ({ bar, enterPosition }) => {
 
             }

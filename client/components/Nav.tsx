@@ -4,8 +4,8 @@ import { Box, Flex, Text } from 'rebass'
 interface Props {
     loading: boolean;
 }
-export const Nav = () => {
-    // console.log('loading is ', loading)
+export const Nav = (props: Props) => {
+    console.log('loading is ', props.loading)
     return (
         <Flex
             px={2}

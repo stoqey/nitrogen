@@ -1,7 +1,7 @@
 import { PubSub } from "apollo-server-express";
 import chalk from "chalk";
 
-import { APPEVENTS,AppEvents } from "../../shared/AppEvent";
+import { APPEVENTS, AppEvents } from "../../shared/AppEvent";
 import { AlgoResults } from "../../shared/graphql/algoresults.typedef";
 import { delay } from "../../shared/utils/promise.utils";
 import { plotGraphImageToDisk, saveTradeDataToDisk } from "../publishers/plotGraphImage";
@@ -58,6 +58,6 @@ export const resolverEvents = (pubsub: PubSub) => {
     appEvents.on(APPEVENTS.PLOT_ALGO_RESULTS, (data: { transId: string }) => {
         const { transId } = data;
         // Plot graph here
-        plotGraphImageToDisk(transId, pubsub);
+        plotGraphImageToDisk(transId);
     })
 }
