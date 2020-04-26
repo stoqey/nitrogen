@@ -21,16 +21,16 @@ jobs:
 
       - gcp-gcr/gcr-auth
 
-      # Fintrogen notebook
+      # nitrogen notebook
       - gcp-gcr/build-image:
           registry-url: gcr.io
-          image: fintrogen
+          image: nitrogen
           tag: ${CIRCLE_SHA1:0:7}
           dockerfile: Dockerfile.notebook
 
       - gcp-gcr/push-image:
           registry-url: gcr.io
-          image: fintrogen
+          image: nitrogen
           tag: ${CIRCLE_SHA1:0:7} 
 
       - k8s/install
@@ -40,11 +40,11 @@ jobs:
 
       - run:
           name: Update Algo Notebook Deployment
-          command: kubectl set image deployment/fintrogen fintrogen=gcr.io/xxcloud/fintrogen:${CIRCLE_SHA1:0:7}
+          command: kubectl set image deployment/nitrogen nitrogen=gcr.io/xxcloud/nitrogen:${CIRCLE_SHA1:0:7}
 
 workflows:
   version: 2
-  fintrogen:
+  nitrogen:
     jobs:
       - build:
           filters:

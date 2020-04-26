@@ -1,5 +1,8 @@
-# Fintrogen
-Notebook for building algo trading strategies.
+<h1 align="center">Nitrogen</h1>
+<p align="center">Notebook for building algo trading strategies.</p>
+
+
+<img style="display: flex;margin: auto;" src="./docs/dollarbill.gif"></img> 
 
 
 
@@ -8,9 +11,15 @@ There are very few javascript notebooks for creating algorithmic trading strateg
 
 With a simple server-side rendered app, we can run the algo code on the server-side then we send the processed data to the client for visualization and analysis.
 
-## Features
 
-| Done? |                         |
+<h2 align="center">Features</h2>
+
+![Features of nitrogen](docs/nitrogen-form.png)
+<div align="center">Nitrogen molecules</div>
+
+<br/>
+
+| Done? | Molecules               |
 | :---: | ----------------------- |
 |   ✅   | Backtesting             |
 |   ✅   | Market data integration |
@@ -29,8 +38,8 @@ With a simple server-side rendered app, we can run the algo code on the server-s
 
 #### Install
 ```bash
--> git clone fintrogen
--> cd path/to/fintrogen
+-> git clone nitrogen
+-> cd path/to/nitrogen
 -> yarn  
 ```
 
@@ -54,9 +63,11 @@ With a simple server-side rendered app, we can run the algo code on the server-s
 ### Roadmap
 
 
-## CODENAME: Nitrogen 2020
-![Nitrogen](./docs/nitrogen.png)
 
-##### Stoqey INC
+<img style="display: flex;margin: auto;" src="./docs/nitrogen.png"></img> 
+<p align="center">Stoqey Inc, Nitrogen</p>
+
+
+
 
   
