@@ -19,9 +19,11 @@ function getApolloClient(): ApolloClient<any> {
 		(
 			() => {
 				if (isClient) {
-					const wsLink = getWebsocketLink();
+					const wsuri = getWebsocketLink();
+
+					console.log('websocket', wsuri);
 					return new WebSocketLink({ // if you instantiate in the server, the error will be thrown
-						uri: wsLink,
+						uri: wsuri,
 						options: {
 							reconnect: true
 						},
