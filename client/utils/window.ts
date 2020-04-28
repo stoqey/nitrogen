@@ -1,9 +1,12 @@
 export const getWebsocketLink = (): string => {
-    const url: string = window && window.location && window.location.href;
-    const arr = url.split("/");
-    const host = arr[2];
-    const proto = arr[0];
-    const isProd = proto === 'https';
+    const host: string = window && window.location && window.location.hostname;
+
+    let isProd = true;
+
+    if (["localhost", "127.0.0.1", ""].includes(host)) {
+        isProd = false;
+    };
+
     const protocol = isProd ? 'wss' : 'ws';
     return `${protocol}://${host}/graphql`;
 }
