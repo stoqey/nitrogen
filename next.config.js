@@ -13,6 +13,11 @@ const { SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, AMPLITUDE_KEY, SEGMENT_PROD, SEG
 
 // next.js configuration
 const nextConfig = {
+    publicRuntimeConfig: {
+        SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, // sentry error logging
+        AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, // amplitude and segment
+    },
+
     env: {
         SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, // sentry error logging
         AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, // amplitude and segment
