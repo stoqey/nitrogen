@@ -4,7 +4,10 @@ const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 const withSourceMaps = require('@zeit/next-source-maps');
 const withPlugins = require('next-compose-plugins');
 
-require('dotenv').config();
+if (!process.env.SENTRY_DSN) { // Only if envs empty
+    require('dotenv').config();
+}
+
 // Use the SentryWebpack plugin to upload the source maps during build step
 
 

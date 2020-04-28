@@ -1,9 +1,12 @@
 import os from 'os';
 
-require('dotenv').config();
+export const isDev = process.env.NODE_ENV === 'development';
+
+if (isDev) {
+    require('dotenv').config();
+}
 
 const { env } = process;
-export const isDev = env.NODE_ENV !== 'production';
 
 export const HOSTNAME = os.hostname();
 export const finnHubKey = env.FINNHUB_KEY || '';

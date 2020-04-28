@@ -14,9 +14,7 @@
     "export": "next export && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node dist/server/index.js",
     "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit",
-    "eslint": "eslint . --fix --ext=ts,tsx",
-    "lint:ts": "yarn eslint",
-    "lint:ts:fix": "yarn lint:js -- --fix"
+    "eslint": "eslint . --fix --ext=ts,tsx"
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": [
