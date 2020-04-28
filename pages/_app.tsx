@@ -12,6 +12,8 @@ import App from 'next/app';
 import React from 'react';
 import { SENTRY_DSN } from 'shared/config';
 import { ThemeProvider } from 'theme-ui'
+import { ScriptsInject } from 'client/analytics/ScriptsInject';
+
 
 const sentryConfig = {
   enabled: process.env.NODE_ENV === 'production',
@@ -31,6 +33,7 @@ class CustomApp extends App<any, any> {
     const ComponentWithApollo = RootAppWithApollo(Component);
     return (
       <ThemeProvider theme={theme}>
+        <ScriptsInject />
         <GlobalStyle />
         <ComponentWithApollo {...modifiedPageProps} />
       </ThemeProvider>

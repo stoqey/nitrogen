@@ -12,7 +12,7 @@
     "docker": "docker build -t gcr.io/xxcloud/nitrogen:latest .",
     "docker:push": "docker push gcr.io/xxcloud/nitrogen:latest",
     "export": "next export && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node dist/server/index.js",
+    "start": "NODE_ENV=production node dist/server/index.js",
     "test": "TS_NODE_PROJECT='./tsconfig.commonjs.json' NODE_ENV=test mocha server/*test.ts --exit",
     "eslint": "eslint . --fix --ext=ts,tsx",
     "lint:ts": "yarn eslint",
@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": [
-      "eslint . --fix"
+      "yarn eslint"
     ]
   },
   "husky": {
