@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
-import { AMPLITUDE_KEY, SEGMENT_DEV,SEGMENT_PROD } from 'shared/config';
+import { AMPLITUDE_KEY, SEGMENT_DEV, SEGMENT_PROD } from 'shared/config';
 import { ServerStyleSheet } from 'styled-components';
 
 export class CustomDocument extends Document {
@@ -77,10 +77,13 @@ export class CustomDocument extends Document {
                 
                 var currentUrl = window && window.location && window.location.href;
 
+                var proto = window && window.location && window.location.href.split("/")[0];
+
                 var prodKey="${SEGMENT_PROD}";
                 var devKey="${SEGMENT_DEV}";
 
-                var isProd = currentUrl.includes('stoqey');
+                var isProd = proto === 'https';
+
                 var segmentkey = isProd? prodKey : devKey;
                 analytics.load(segmentkey);
 
