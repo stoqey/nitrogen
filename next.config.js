@@ -18,18 +18,17 @@ if (!process.env.SENTRY_DSN) { // Only if envs empty
 
 const { SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, NODE_ENV } = process.env;
 
+const publicEnvs = {
+    SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, // sentry error logging
+    AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, // amplitude and segment 
+}
 
 // next.js configuration
 const nextConfig = {
-    publicRuntimeConfig: {
-        SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, // sentry error logging
-        AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, // amplitude and segment
-    },
 
-    env: {
-        SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, // sentry error logging
-        AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, // amplitude and segment
-    },
+    publicRuntimeConfig: publicEnvs,
+
+    env: publicEnvs,
 
     exportPathMap: function () {
         return {

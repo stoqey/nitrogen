@@ -27,13 +27,6 @@ Sentry.init(sentryConfig)
 
 
 class CustomApp extends App<any, any> {
-  // static async getInitialProps() {
-  //   const env = {
-  //     AMPLITUDE_KEY, SEGMENT_DEV, SEGMENT_PROD
-  //   }
-  //   return { env } as any;
-  // }
-
   render() {
     // Workaround for https://github.com/zeit/next.js/issues/8592
     const { err, pageProps, Component } = this.props;
