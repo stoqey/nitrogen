@@ -3,6 +3,7 @@ FROM mhart/alpine-node:10.19 AS builder
 WORKDIR /srv
 
 COPY . .
+RUN cat .env
 RUN apk add libc6-compat gnuplot
 RUN yarn
 RUN yarn build 
