@@ -6,8 +6,6 @@ import { analyticsEnv } from '../../shared/config';
 export function ScriptsInject(props: any) {
     const env = props && props.env && props.env['AMPLITUDE_KEY'] ? props.env : analyticsEnv;
 
-    console.log('logs', props && props.env);
-
     const { AMPLITUDE_KEY, SEGMENT_DEV, SEGMENT_PROD } = env;
 
     return (
