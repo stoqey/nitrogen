@@ -4,7 +4,7 @@
   "description": "Notebook for quants and developers",
   "main": "index.js",
   "scripts": {
-    "dev": "SENTRY_LOG_LEVEL=info nodemon server/index.ts",
+    "dev": "SENTRY_LOG_LEVEL=info NODE_ENV=development nodemon server/index.ts",
     "build:backend": "tsc --project tsconfig.server.json",
     "dev-algo": "nodemon server/dev.ts",
     "copy-client-files": "cp -r client/assets dist/client/",

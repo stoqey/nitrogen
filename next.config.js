@@ -8,7 +8,7 @@ require('dotenv').config();
 // Use the SentryWebpack plugin to upload the source maps during build step
 
 
-const { SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV } = process.env;
+const { SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT, AMPLITUDE_KEY, SEGMENT_PROD, SEGMENT_DEV, NODE_ENV } = process.env;
 
 
 // next.js configuration
@@ -45,13 +45,18 @@ const nextConfig = {
         // and upload the source maps to sentry.
         // This is an alternative to manually uploading the source maps
         if (SENTRY_DSN && SENTRY_ORG && SENTRY_PROJECT) {
-            config.plugins.push(
-                new SentryWebpackPlugin({
-                    include: '.next',
-                    ignore: ['node_modules'],
-                    urlPrefix: '~/_next',
-                })
-            )
+
+            // Do not upload source map on dev
+            if (NODE_ENV != 'development') {
+                config.plugins.push(
+                    new SentryWebpackPlugin({
+                        include: '.next',
+                        ignore: ['node_modules'],
+                        urlPrefix: '~/_next',
+                    })
+                )
+            }
+
         }
 
         return config;

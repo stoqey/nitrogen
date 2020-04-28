@@ -1,9 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { AMPLITUDE_KEY, SEGMENT_DEV, SEGMENT_PROD } from '../../shared/config';
+import { analyticsEnv } from '../../shared/config';
 
-export function ScriptsInject() {
+export function ScriptsInject(props: any) {
+    const env = props && props.env && props.env['AMPLITUDE_KEY'] ? props.env : analyticsEnv;
+
+    console.log('logs', props && props.env);
+
+    const { AMPLITUDE_KEY, SEGMENT_DEV, SEGMENT_PROD } = env;
+
     return (
 
         <Head>
