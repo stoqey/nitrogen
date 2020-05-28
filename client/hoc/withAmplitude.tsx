@@ -4,7 +4,7 @@ import {
 } from "@amplitude/react-amplitude";
 import React from "react";
 
-import { AMPLITUDE_KEY, isClient } from "../../shared/config";
+import { analyticsEnv, isClient } from "../../shared/config";
 
 function withAmplitude(Component: any) {
     return () => {
@@ -13,6 +13,8 @@ function withAmplitude(Component: any) {
             // Render component without SSR for amplitude
             return <Component />;
         };
+
+        const { AMPLITUDE_KEY } = analyticsEnv;
 
         return (
             <AmplitudeProvider

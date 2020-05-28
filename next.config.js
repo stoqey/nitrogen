@@ -4,9 +4,7 @@ const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 const withSourceMaps = require('@zeit/next-source-maps');
 const withPlugins = require('next-compose-plugins');
 
-if (!process.env.SENTRY_DSN) { // Only if envs empty
-    require('dotenv').config();
-}
+require('dotenv').config();
 
 if (!process.env.SENTRY_DSN) { // Only if envs empty
     console.log('error env', process.env);

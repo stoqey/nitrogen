@@ -10,7 +10,7 @@ import React from 'react'
 
 import { getWebsocketLink } from '../../client/utils/window';
 import { isClient, SERVER_URI } from '../../shared/config';
-import withAmplitude from './withAmplitude';
+// import withAmplitude from './withAmplitude';
 
 
 function getApolloClient(): ApolloClient<any> {
@@ -72,11 +72,11 @@ export const RootAppWithApollo = (MyRootComponent: React.FunctionComponent) => {
 		const client = getApolloClient();
 
 		// instrument entire app with Amplitude
-		const RootApp = withAmplitude(MyRootComponent);
+		// const RootApp = withAmplitude(MyRootComponent);
 
 		return (
 			<ApolloProvider client={client}>
-				<RootApp />
+				<MyRootComponent />
 			</ApolloProvider>
 		)
 	}
