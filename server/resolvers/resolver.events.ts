@@ -43,6 +43,37 @@ export const resolverEvents = (pubsub: PubSub) => {
 
     });
 
+    /**
+     * Run Algorithm Pattern recognition
+     * @emits ON_ALGO_RESULTS
+     */
+    appEvents.on(APPEVENTS.RUN_PATTERN, async (data: RunAlgorithm) => {
+        return await new Promise((resolve) => {
+            async function runAlgorithmWithData() {
+
+                // Or run from here
+                const results = await sendDataToAlgoServer('/algo/run/pattern', data);
+
+                // console.log('results', results)
+                const transId = results.runAlgo.transId;
+
+                console.log(APPEVENTS.RUN_PATTERN, chalk.green(`emitting to ${transId}`));
+
+                await delay(600, "some cool value");
+
+                // Publish results
+                pubsub.publish(`${APPEVENTS.ON_ALGO_RESULTS}-${transId}`, results);
+
+                // Save results and plot
+                appEvents.emit(APPEVENTS.SAVE_ALGO_RESULTS, { transId, results });
+
+                resolve({ done: true })
+            }
+            runAlgorithmWithData();
+        });
+
+    });
+
     // 1. SaveTradesDataToDisk
     appEvents.on(APPEVENTS.SAVE_ALGO_RESULTS, async (data: { results: AlgoResults, transId: string }) => {
         const { transId, results } = data;

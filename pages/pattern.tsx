@@ -26,7 +26,7 @@ const Index = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [enterSymbolData, setEnterSymbol] = useState<EnterSymbolData>({} as any);
 
-  const { symbol, endDate, startDate, algoMode } = enterSymbolData;
+  const { endDate, startDate, algoMode } = enterSymbolData;
 
   const [transId, setTransId] = useState<string>(`${randomNumber()}`);
 
@@ -36,7 +36,13 @@ const Index = () => {
 
   const [algoData, setLocalAlgoData] = useState<State>({} as any);
 
-  const startTrade = async () => {
+
+
+  const fetchRunAlgo = async (data: any) => {
+    const { startDate,
+      endDate,
+      symbol,
+      algoMode } = data;
     // run selectedDateRange magic then set next range
     setLoading(true);
 
@@ -52,19 +58,19 @@ const Index = () => {
         }
       }
     });
+
   }
 
   const runAlgo = (data: EnterSymbolData) => {
 
     setTransId(`${randomNumber()}`);
 
-    // Run a transaction
-    setEnterSymbol(data);
-
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     resetAlgo();
 
-    startTrade();
+    // Run a transaction
+    setEnterSymbol(data);
+    fetchRunAlgo(data);
   }
 
   const resetAlgo = () => {
@@ -126,7 +132,7 @@ const Index = () => {
     })
 
     return () => subscription.unsubscribe()
-  }, [algoData])
+  }, [])
 
   return (
     <>

@@ -7,7 +7,7 @@ export const RUN_ALGO = gql`
 `;
 
 export const RUN_PATTERN = gql`
-  query RunThePatter($input: inputRunAlgo) {
+  query RunThePattern($input: inputRunAlgo) {
     runPattern(input: $input)
   }
 `;
