@@ -6,7 +6,7 @@ import random from 'lodash/random';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { AlgoResults } from 'shared/graphql/algoresults.typedef';
-import { RUN_ALGO } from 'shared/graphql/query/runAlgo.query';
+import { RUN_PATTERN } from 'shared/graphql/query/runAlgo.query';
 import { ON_ALGO_RESULTS_SUBSCRIPTION } from 'shared/graphql/subscription';
 import PatternScreen from '../client/screens/PatternScreen';
 import { RunAlgorithmResults } from '../server/strategy/runStrategy';
@@ -47,7 +47,7 @@ const Index = () => {
     setLoading(true);
 
     await client.query({
-      query: RUN_ALGO,
+      query: RUN_PATTERN,
       variables: {
         input: {
           startDate,
