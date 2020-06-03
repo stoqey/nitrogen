@@ -3,6 +3,7 @@ import EventEmitter from 'events';
 export enum APPEVENTS {
 
     RUN_ALGO = 'run_algo',
+    RUN_PATTERN = 'run_pattern',
 
     /**
      * { trades: Position[]; capital: number; profit?: number; totalTrades?: number; }

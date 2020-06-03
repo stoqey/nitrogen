@@ -8,6 +8,7 @@ import algoresultsTypedef from './algoresults.typedef';
 const typeDefs = gql`
   type Query {
     runAlgo(input: inputRunAlgo): Boolean
+    runPattern(input: inputRunAlgo): Boolean
   }
   
   type Subscription {

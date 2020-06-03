@@ -12,5 +12,14 @@ export const QueryResolver = {
             return true;
         }
         return false;
+    },
+    runPattern: (_: any, args: any): boolean => {
+        const input: RunAlgorithm = args && args.input;
+        // console.log('args to runAlgo', input);
+        if (!isEmpty(input)) {
+            AppEvents.Instance.emit(APPEVENTS.RUN_PATTERN, input);
+            return true;
+        }
+        return false;
     }
 }

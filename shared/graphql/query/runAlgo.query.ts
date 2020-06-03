@@ -5,3 +5,9 @@ export const RUN_ALGO = gql`
     runAlgo(input: $input)
   }
 `;
+
+export const RUN_PATTERN = gql`
+  query RunThePattern($input: inputRunAlgo) {
+    runPattern(input: $input)
+  }
+`;
