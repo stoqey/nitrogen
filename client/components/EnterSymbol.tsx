@@ -65,8 +65,17 @@ export const EnterSymbol = (props: Props) => {
     }
 
     const submitForm = () => {
+
+        const starting = startDate.toDate();
+        starting.setHours(9);
+        starting.setMinutes(30);
+
+        const ending = endDate.toDate();
+        ending.setHours(16);
+        ending.setMinutes(30);
+
         enterSymbol(
-            { symbol: (symbol || "").toLocaleUpperCase(), startDate: startDate.toDate(), endDate: endDate.toDate(), algoMode, time: new Date() }
+            { symbol: (symbol || "").toLocaleUpperCase(), startDate: starting, endDate: ending, algoMode, time: new Date() }
         )
     }
 
