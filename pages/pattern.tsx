@@ -30,13 +30,7 @@ const Index = () => {
 
   const [transId, setTransId] = useState<string>(`${randomNumber()}`);
 
-  // const splittedTime = getSplitedTime(startDate, endDate);
-
-  // const totalDays = splittedTime.totalDays;
-
   const [algoData, setLocalAlgoData] = useState<State>({} as any);
-
-
 
   const fetchRunAlgo = async (data: any) => {
     const {
