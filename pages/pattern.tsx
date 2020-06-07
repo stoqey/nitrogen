@@ -39,7 +39,8 @@ const Index = () => {
 
 
   const fetchRunAlgo = async (data: any) => {
-    const { startDate,
+    const {
+      startDate,
       endDate,
       symbol,
       algoMode } = data;
@@ -62,9 +63,6 @@ const Index = () => {
   }
 
   const runAlgo = (data: EnterSymbolData) => {
-
-    setTransId(`${randomNumber()}`);
-
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     resetAlgo();
 
@@ -77,8 +75,8 @@ const Index = () => {
     setLocalAlgoData({ ...algoData, startingDateRangeIndex: 0, trades: [], profit: 0, marketData: [], totalTrades: 0 });
   }
 
-  // Subscribe to current transId
-  useEffect(() => {
+  const listenData = () => {
+
     const observer = client.subscribe<any, any>({
       query: ON_ALGO_RESULTS_SUBSCRIPTION,
       variables: {
@@ -113,7 +111,7 @@ const Index = () => {
         return moment(d).format('MM-DD-YYYY')
       }
 
-      console.log('SUBSCRIBE:DATE', { start: formatDate(startDate), end: formatDate(endDate) });
+      console.log('SUBSCRIBE:DATE', { start: formatDate(startDate), end: formatDate(endDate), transId });
       console.log('----------------', { newTotalTrades, profitOG, newProfit, algoMode });
       // console.log('SUBSCRIBE:TRADES', { newTotalTrades, profitOG, newProfit });
 
@@ -129,10 +127,17 @@ const Index = () => {
       });
 
       setLoading(false);
+
+      setTransId(`${randomNumber()}`);
     })
 
     return () => subscription.unsubscribe()
-  }, [])
+  }
+
+  // Subscribe to current transId
+  useEffect(() => {
+    return listenData();
+  }, [transId]);
 
   return (
     <>
