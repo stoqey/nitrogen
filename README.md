@@ -11,7 +11,7 @@
 There are very few javascript notebooks for creating algorithmic trading strategies.
 
 
-With a simple server-side rendered app, we can run the algo code on the server-side then we send the processed data to the client for visualization and analysis.
+With a simple server-side rendered app, you can run the algo code on the server-side then send the processed data to the client for visualization and analysis.
 
 
 <h2 align="center">Features</h2>
@@ -63,12 +63,6 @@ With a simple server-side rendered app, we can run the algo code on the server-s
   ```
   -->
   ```
-
-
-### Roadmap
-
-
-
 
 <p align="center">
 <img src="./docs/nitrogen.png"></img> 
