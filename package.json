@@ -51,7 +51,7 @@
     "apollo-client": "^2.6.8",
     "apollo-link-http": "^1.5.17",
     "apollo-link-ws": "^1.0.20",
-    "apollo-server-express": "^2.11.0",
+    "apollo-server-express": "2.14.2",
     "axios": "^0.19.2",
     "chalk": "^3.0.0",
     "d3-time-format": "^2.2.3",
